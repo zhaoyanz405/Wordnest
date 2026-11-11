@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "拾词 · 阅读中的单词本",
+  "version": "0.1.1",
+  "description": "选中生词，右键收藏。原句保存在本机，后台查询词典，阅读之后再复习。",
+  "minimum_chrome_version": "120",
+  "permissions": ["activeTab", "scripting", "contextMenus", "alarms"],
+  "host_permissions": [
+    "https://api.dictionaryapi.dev/*",
+    "https://en.wiktionary.org/*"
+  ],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "打开拾词单词本",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "commands": {
+    "collect-word": {
+      "suggested_key": { "default": "Ctrl+Shift+S", "mac": "Command+Shift+S" },
+      "description": "收藏当前选中的英文单词或短语"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}

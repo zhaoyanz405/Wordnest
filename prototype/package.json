@@ -1,0 +1,27 @@
+{
+  "name": "shici",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "build:extension": "vite build --config vite.extension.config.mjs && node scripts/prepare-extension.mjs",
+    "preview": "vite preview",
+    "test:sites": "node --test tests/sites-worker.test.mjs",
+    "test": "node --test tests/vocabulary.test.mjs tests/library.test.mjs tests/dictionary.test.mjs tests/extension.test.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "5.0.4",
+    "animal-island-ui": "^3.0.4",
+    "classnames": "^2.5.1",
+    "htmlparser2": "^12.0.0",
+    "naive-icons": "^1.16.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "vite": "6.4.2"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.8"
+  }
+}
